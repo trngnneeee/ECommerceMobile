@@ -4,7 +4,7 @@ import Feather from '@expo/vector-icons/Feather';
 export function Header(){
   return (
     <>
-      <View className="flex flex-row justify-between py-[10px] px-[16px] bg-white">
+      <View className="flex flex-row justify-between py-[10px] px-[16px] border-b-[1px] border-b-[#ddd]">
         <Image
           source={require("../../assets/images/quickmart.png")}
         />

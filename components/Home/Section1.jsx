@@ -5,7 +5,7 @@ export const Section1 = () => {
     <View className="mt-[24px]">
       <View className="flex flex-row justify-center relative">
         <Image
-          source={require("./../../../assets/images/Rectangle 6.png")}
+          source={require("./../../assets/images/Rectangle 6.png")}
         />
         <View className="absolute left-[45px] top-1/2 -translate-y-1/2">
           <View className="bg-black p-[6px] rounded-[6px] mb-[6px]">

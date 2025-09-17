@@ -1,13 +1,13 @@
 import { Link } from "expo-router";
-import { Title } from "../../../components/Title/Title";
+import { Title } from "../Title/Title";
 import { Text, View, Image } from "react-native"
 
 export const Section2 = () => {
   const categoryImage = {
-    electronics: require("../../../assets/images/electronics.png"),
-    fashion: require("../../../assets/images/fashion.png"),
-    furniture: require("../../../assets/images/furniture.png"),
-    industrial: require("../../../assets/images/industrial.png"),
+    electronics: require("./../../assets/images/electronics.png"),
+    fashion: require("./../../assets/images/fashion.png"),
+    furniture: require("./../../assets/images/furniture.png"),
+    industrial: require("./../../assets/images/industrial.png"),
   }
   
   const categoryData = [

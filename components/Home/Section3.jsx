@@ -1,6 +1,6 @@
 import { Link } from "expo-router";
-import { Title } from "../../../components/Title/Title";
-import { ProductItem } from "../../../components/ProductItem/ProductItem";
+import { Title } from "../Title/Title";
+import { ProductItem } from "../ProductItem/ProductItem";
 import { Text, View, Image } from "react-native"
 
 export const Section3 = () => {
@@ -19,7 +19,18 @@ export const Section3 = () => {
         <ProductItem/>
         <ProductItem/>
         <ProductItem/>
+        <ProductItem/>
+        <ProductItem/>
+        <ProductItem/>
+        <ProductItem/>
+        <ProductItem/>
+        <ProductItem/>
+        <ProductItem/>
+        <ProductItem/>
+        <ProductItem/>
+        <ProductItem/>
       </View>
+        <ProductItem/>
     </>
   );
 }

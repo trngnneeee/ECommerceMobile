@@ -2,8 +2,8 @@ import { Stack } from "expo-router";
 import { useFonts } from "@expo-google-fonts/plus-jakarta-sans/useFonts"
 import "./global.css"
 
-import { 
-  PlusJakartaSans_700Bold, 
+import {
+  PlusJakartaSans_700Bold,
   PlusJakartaSans_400Regular,
   PlusJakartaSans_600SemiBold,
   PlusJakartaSans_500Medium
@@ -16,8 +16,15 @@ export default function RootLayout() {
     PlusJakartaSans_600SemiBold,
     PlusJakartaSans_500Medium
   })
-  
+
   if (!fontsLoaded) return null;
 
-  return <Stack screenOptions={{ headerShown: false }}/>;
+  return (
+    <Stack>
+      <Stack.Screen
+        name="(tabs)"
+        options={{ headerShown: false }}
+      />
+    </Stack>
+  );
 }
