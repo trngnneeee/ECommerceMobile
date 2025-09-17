@@ -1,33 +1,29 @@
-import { Link } from "expo-router";
+import { Link, useRouter } from "expo-router";
 import { Title } from "../Title/Title";
-import { Text, View, Image } from "react-native"
+import { Text, View, Image, TouchableOpacity } from "react-native"
+import { useEffect, useState } from "react";
 
 export const Section2 = () => {
-  const categoryImage = {
-    electronics: require("./../../assets/images/electronics.png"),
-    fashion: require("./../../assets/images/fashion.png"),
-    furniture: require("./../../assets/images/furniture.png"),
-    industrial: require("./../../assets/images/industrial.png"),
-  }
-  
-  const categoryData = [
-    {
-      image: categoryImage.electronics,
-      title: "Electronics"
-    },
-    {
-      image: categoryImage.fashion,
-      title: "Fashion"
-    },
-    {
-      image: categoryImage.furniture,
-      title: "Furniture"
-    },
-    {
-      image: categoryImage.industrial,
-      title: "Industrial"
-    },
-  ]
+  const tmpAPI = "https://fakestoreapi.com/products";
+
+  const [categoryList, setCategoryList] = useState([]);
+  const router = useRouter();
+
+  useEffect(() => {
+    const fetchData = (url) => {
+      fetch(url)
+        .then((res) => res.json())
+        .then((data) => {
+          let tmp = [];
+          for (const item of data) {
+            if (!tmp.includes(item.category)) tmp.push(item.category);
+          }
+          setCategoryList(tmp);
+        })
+    }
+
+    fetchData(tmpAPI);
+  }, [])
 
   return (
     <>
@@ -40,13 +36,18 @@ export const Section2 = () => {
         </Link>
       </View>
       <View className="flex flex-row justify-between mt-[12px]">
-        {categoryData.map((item, index) => (
-          <View key={index} className="py-[10px] flex flex-col justify-center items-center border-[1px] border-[#d2cfcf] rounded-[12px]">
-            <Image
-              source={item.image}
-            />
-            <Text className="w-[60px] mx-[8px] text-center text-[10px] font-jakarta-semibold">{item.title}</Text>
-          </View>
+        {categoryList.map((item, index) => (
+          <TouchableOpacity 
+            key={index} 
+            className="py-[10px] flex flex-col justify-center items-center border-[1px] border-[#d2cfcf] rounded-[12px]"
+            onPress={() => {
+              router.push({
+                pathname: `/categories/${item}`
+              })
+            }}
+          >
+            <Text className="w-[60px] mx-[8px] text-center text-[10px] font-jakarta-semibold">{item}</Text>
+          </TouchableOpacity>
         ))}
       </View>
     </>
