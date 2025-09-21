@@ -35,7 +35,7 @@ export default function Categories() {
         />
         <ScrollView className="p-[16px]">
           <View className="flex flex-row flex-wrap justify-between gap-[10px]">
-            {categoryList.length && categoryList.map((item, index) => (
+            {categoryList.length > 0 && categoryList.map((item, index) => (
               <TouchableOpacity
                 key={index}
                 onPress={() => {

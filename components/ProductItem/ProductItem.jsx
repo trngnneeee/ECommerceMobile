@@ -1,12 +1,12 @@
 import { Image, View, Text } from "react-native"
 import { HeartButton } from "../../components/HeartButton/HeartButton"
 
-export const ProductItem = ({ key, item }) => {
+export const ProductItem = ({ item }) => {
   const size = 20;
 
   return (
     <>
-      <View className="w-[45%] relative" key={key}>
+      <View className="w-[45%] relative">
         <View className="h-[150px] overflow-hidden rounded-[24px]">
           <Image
             source={{
